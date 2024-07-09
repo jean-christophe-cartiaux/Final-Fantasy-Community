@@ -1,0 +1,85 @@
+<div class="container">
+
+  <a routerLink="">
+    <img src="assets/img/ff1_Bis_bis.png" class="center" alt="Image">
+  </a>
+  <div class="btn-container">
+
+    <a class="btn" routerLink="/forum">Forum</a>
+<!--    <a class="droite btn" routerLink="">connexion</a>-->
+<!--    <a class="btn" routerLink="">créer un compte</a>-->
+
+
+  @if(!loggedIn){
+
+      <div class="btn-container">
+          <a class="droite btn" routerLink="/login">Connexion</a>
+
+        <a  class="btn" routerLink="/register">Créer un compte</a>
+      </div>
+
+  }@else if (loggedIn){
+
+    <div class="btn-container">
+        <a class="droite btn" (click)="logout()">Deconnexion</a>
+
+
+        <a  class="btn" routerLink="/profil">Profil</a>
+    </div>
+
+  }
+  </div>
+
+</div>
+<ul>
+  <li><a routerLink="">Actualités</a> </li>
+
+  <li><a routerLink="/event">Event</a> </li>
+
+  <li class="dropdown">
+    <a routerLink="" class="dropbtn">Final Fantasy</a>
+    <div class="dropdown-content">
+
+      @for (section of finalFantasySections;track section){
+        <h3 class="espace">{{section.title}}</h3>
+        @for  (item of section.items;track item){
+          <button (click)="navigate(item.id,'ffN')" >
+            <img [src]="item.icon" class="menu-icon"/>
+            <span>{{item.label}}</span>
+          </button>
+
+        }
+      }
+    </div>
+
+  </li>
+
+  <li class="dropdown">
+    <a routerLink="" class="dropbtn">Final Fantasy HS</a>
+    <div class="dropdown-content">
+
+      <h3 class="espace">Final Fantasy Hors Serie</h3>
+      @for (item of finalFantasyHs;track item){
+        <button (click)="navigate(item.id,'ffHs')" >
+          <img [src]="item.icon" class="menu-icon"/>
+          <span>{{item.label}}</span>
+        </button>
+
+
+      }
+    </div>
+
+  </li>
+
+
+
+  <li><a routerLink="/fftcg">FFTCG</a> </li>
+
+
+  <li><a routerLink="/contact">Contact</a> </li>
+  @if(authService.isAdmin()){
+  <li>
+    <a  [routerLink]="['/creationcontenue']">Admin</a>
+  }
+</ul>
+

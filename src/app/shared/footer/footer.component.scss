@@ -1,0 +1,43 @@
+.footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center; /* centrer le contenu horizontalement */
+  padding: 1rem 0; /* ajuster le padding si nécessaire */
+}
+
+.content {
+  max-width: 1200px;
+  width: 100%; /* s'assurer que la largeur est de 100% pour le centrer */
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* espacer le contenu horizontalement */
+  flex-direction: column; /* aligner les éléments en colonne sur petits écrans */
+}
+
+.footer .social-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem; /* ajouter un espace au-dessus des icônes */
+}
+
+.footer .social-media a {
+  color: #495057;
+  font-size: 2rem;
+}
+
+.footer .social-media a:hover {
+  color: #007bff;
+}
+
+.footer .copyright {
+  font-size: 1rem;
+  color: #6c757d;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1rem; /* ajouter un espace en dessous du texte */
+}
